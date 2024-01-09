@@ -1,6 +1,7 @@
-import { Box, Button, Grid, Typography , Container } from "@mui/material";
+import { Box, Typography  } from "@mui/material";
 import Logo from '../../assets/Instagram Logo.jpg'
 import Profile from '../../assets/user.jpg'
+import { Link } from "react-router-dom";
 
 
 export default function Login() {
@@ -33,7 +34,9 @@ export default function Login() {
               fontWeight:'600' ,
                fontSize:'14px' 
                }}>Log in</Typography>
-        <Typography variant="body1" color='#3797EF' sx={{fontWeight:'600' , fontSize:'14px'}}>Switch accounts</Typography>
+        <Typography variant="body1" sx={{}}>
+          <Link to='/switchaccounts' className="linkSwitchAccounts">Switch accounts</Link>
+        </Typography>
       </Box>
         
       <Box 
