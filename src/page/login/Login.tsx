@@ -1,39 +1,12 @@
 import { Box, Container, Typography  } from "@mui/material";
 import Logo from '../../assets/Instagram Logo.jpg'
-import { Link, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import {LoginContext} from '../../context/LoginContext.jsx'
 
 
 export default function Login() {
-  const [user, setUser] = useState([]);
-  const navigate = useNavigate();
-
-  const userName = localStorage.getItem('username')
-  const passWord = localStorage.getItem('password')
-
-  localStorage.setItem('username',user.username);
-  localStorage.setItem('password',user.password);
-  
-  const hanleSubmit = () => {
-    if(user.username == userName && user.password == passWord){
-      navigate("/home");
-    }else{
-      alert('username or password that false')
-    }
-  }
-  
-
-  const getData = () => {
-    axios.get('http://localhost:5005/users')
-    .then(res => setUser(res.data[0]))
-    .catch((error) => console.log("error", error));
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
+  const { user } =useContext(LoginContext);
 
   return (
     <Container>
@@ -54,7 +27,6 @@ export default function Login() {
         </Box>
         <Box sx={{textAlign:'center'}} width='100%'>
           <Typography variant="h2"
-          onClick={hanleSubmit}
           sx={{ 
                 py:'15px',
                 borderRadius:'5px',
@@ -66,7 +38,7 @@ export default function Login() {
                 fontWeight:'600' ,
                 fontSize:'14px' 
                 }}>
-                    Log in
+                   <Link to='/home' className="linkHome"> Log in</Link>
                 </Typography>
           <Typography>
             <Link to='/switchaccounts' className="linkSwitchAccounts">Switch accounts</Link>

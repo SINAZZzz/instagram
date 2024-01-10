@@ -3,31 +3,18 @@ import Logo from '../../assets/Instagram Logo.jpg'
 import faceBook from '../../assets/icons/Icon.svg'
 import { Link, useNavigate } from "react-router-dom";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import axios from "axios";
-import { useEffect, useState } from "react";
+import {LoginContext} from '../../context/LoginContext.jsx'
+import { useContext } from "react";
 
 export default function SwitchAccounts() {
-  const [user, setUser] = useState([]);
+  const { user , username , password , setUsername , setPassword } =useContext(LoginContext);
   const navigate = useNavigate();
 
   const userName = localStorage.getItem('username')
   const passWord = localStorage.getItem('password')
-
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
+  
   localStorage.setItem('username',username);
   localStorage.setItem('password',password);
-
-  const getData = () => {
-    axios.get('http://localhost:5005/users')
-    .then(res =>setUser(res.data[0]))
-    .catch((error) => console.log("error", error));
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
 
   const hanleSubmit = () => {
     if(user.username == userName && user.password == passWord){
@@ -37,8 +24,6 @@ export default function SwitchAccounts() {
     }
   }
   
-
-
   return ( 
     <Container>
       <Link to='/'>
