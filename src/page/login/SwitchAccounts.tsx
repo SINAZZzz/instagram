@@ -33,13 +33,13 @@ export default function SwitchAccounts() {
           }}>
              <Typography variant="body1" color="#3797EF" fontSize="12px" fontWeight='500'>Forgot password?</Typography>
           </Box>
-          <Box sx={{textAlign:'center' ,  mb:'4rem'}}>
+          <Box sx={{textAlign:'center' ,  mb:'4rem'}} width='100%'>
             <Typography variant="h2"
             sx={{
-              py:'10px',
+              py:'15px',
               borderRadius:'5px',
               color:'white' ,
-              width:'20rem' ,
+              width:'100%' ,
                 mt:'1rem' ,
                 mb:'2rem' ,
                 background:'#3797EF' ,
@@ -97,6 +97,7 @@ export default function SwitchAccounts() {
                   bottom: 0,
                   borderTop: "solid 1px  rgb(210, 207, 207)",
                   display:'flex',
+                  background:'white',
                   justifyContent:'center',
                   alignItems:'center',
                   pb:'30px',
