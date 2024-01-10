@@ -1,10 +1,40 @@
 import { Box, Container, Typography  } from "@mui/material";
 import Logo from '../../assets/Instagram Logo.jpg'
-import Profile from '../../assets/user.jpg'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 
 export default function Login() {
+  const [user, setUser] = useState([]);
+  const navigate = useNavigate();
+
+  const userName = localStorage.getItem('username')
+  const passWord = localStorage.getItem('password')
+
+  localStorage.setItem('username',user.username);
+  localStorage.setItem('password',user.password);
+  
+  const hanleSubmit = () => {
+    if(user.username == userName && user.password == passWord){
+      navigate("/home");
+    }else{
+      alert('username or password that false')
+    }
+  }
+  
+
+  const getData = () => {
+    axios.get('http://localhost:5005/users')
+    .then(res => setUser(res.data[0]))
+    .catch((error) => console.log("error", error));
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+
   return (
     <Container>
       <Box sx={{
@@ -17,24 +47,27 @@ export default function Login() {
           <img src={Logo} alt="" />
         </Box>
         <Box>
-          <Box component='img' alt="Profile" src={Profile} sx={{width:'5rem' , borderRadius:'50%' , mt:'2rem'}} />
+          <Box component='img' alt="Profile" src={user.img} sx={{width:'5rem' , borderRadius:'50%' , mt:'2rem'}} />
           <Box>
-            user_name
+            {user.username}
           </Box>
         </Box>
         <Box sx={{textAlign:'center'}} width='100%'>
           <Typography variant="h2"
+          onClick={hanleSubmit}
           sx={{ 
-            py:'15px',
-            borderRadius:'5px',
-            color:'white' ,
-            width:'100%' ,
-              mt:'1rem' ,
-              mb:'2rem' ,
-              background:'#3797EF' ,
+                py:'15px',
+                borderRadius:'5px',
+                color:'white' ,
+                width:'100%' ,
+                mt:'1rem' ,
+                mb:'2rem' ,
+                background:'#3797EF' ,
                 fontWeight:'600' ,
                 fontSize:'14px' 
-                }}>Log in</Typography>
+                }}>
+                    Log in
+                </Typography>
           <Typography>
             <Link to='/switchaccounts' className="linkSwitchAccounts">Switch accounts</Link>
           </Typography>
