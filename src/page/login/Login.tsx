@@ -7,7 +7,6 @@ import {AppContext} from '../../context/AppContext.jsx'
 
 export default function Login() {
   const { user } =useContext(AppContext);
-
   return (
     <Container>
       <Box sx={{
