@@ -2,11 +2,11 @@ import { Box, Container, Typography  } from "@mui/material";
 import Logo from '../../assets/Instagram Logo.jpg'
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import {LoginContext} from '../../context/LoginContext.jsx'
+import {AppContext} from '../../context/AppContext.jsx'
 
 
 export default function Login() {
-  const { user } =useContext(LoginContext);
+  const { user } =useContext(AppContext);
 
   return (
     <Container>

@@ -3,9 +3,9 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { createContext } from "react";
 
-export const LoginContext = createContext();
+export const AppContext = createContext();
 
-const LoginContextProvider = ({ children }) => {
+const AppContextProvider = ({ children }) => {
   const [user, setUser] = useState([]);
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
@@ -22,7 +22,7 @@ const LoginContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <LoginContext.Provider
+    <AppContext.Provider
       value={{
         user: user,
         setUser,
@@ -33,8 +33,8 @@ const LoginContextProvider = ({ children }) => {
       }}
     >
       {children}
-    </LoginContext.Provider>
+    </AppContext.Provider>
   );
 };
 
-export default LoginContextProvider;
+export default AppContextProvider;

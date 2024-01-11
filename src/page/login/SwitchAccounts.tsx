@@ -3,11 +3,13 @@ import Logo from '../../assets/Instagram Logo.jpg'
 import faceBook from '../../assets/icons/Icon.svg'
 import { Link, useNavigate } from "react-router-dom";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import {LoginContext} from '../../context/LoginContext.jsx'
+import {AppContext} from '../../context/AppContext.jsx'
 import { useContext } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function SwitchAccounts() {
-  const { user , username , password , setUsername , setPassword } =useContext(LoginContext);
+  const { user , username , password , setUsername , setPassword } =useContext(AppContext);
   const navigate = useNavigate();
 
   const userName = localStorage.getItem('username')
@@ -20,12 +22,23 @@ export default function SwitchAccounts() {
     if(user.username == userName && user.password == passWord){
       navigate("/home");
     }else{
-      alert('username or password that false');
+      // toast()
+      toast.error('username or password that false', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
     }
   }
   
   return ( 
     <Container>
+       <ToastContainer />
       <Link to='/'>
         <ArrowBackIosNewIcon sx={{pt:'10px'}} />
       </Link>
