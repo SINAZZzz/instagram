@@ -6,7 +6,12 @@
             "age":18,
             "username":"sinaZz",
             "password":"sina2004",
-            "img":"https://s6.uupload.ir/files/user_0ek2.jpg"
+            "img":"https://s6.uupload.ir/files/user_0ek2.jpg",
+            "name":"sina zinsaz",
+            "posts":0,
+            "followers":"1M",
+            "following":100,
+            "desProfile":"Front-End dev"
         },
         {
             "id":2,
