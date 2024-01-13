@@ -8,10 +8,17 @@
             "password":"sina2004",
             "img":"https://s6.uupload.ir/files/user_0ek2.jpg",
             "name":"sina zinsaz",
-            "posts":0,
+            
             "followers":"1M",
             "following":100,
-            "desProfile":"Front-End dev"
+            "desProfile":"Front-End dev",
+            "post":4,
+            "posts": [
+                { "id": 1, "imageUrl": "https://s6.uupload.ir/files/user_0ek2.jpg", "caption": "Caption 1" },
+                { "id": 2, "imageUrl": "https://s6.uupload.ir/files/user_0ek2.jpg", "caption": "Caption 2" },
+                { "id": 3, "imageUrl": "https://s6.uupload.ir/files/user_0ek2.jpg", "caption": "Caption 2" },
+                { "id": 4, "imageUrl": "https://s6.uupload.ir/files/user_0ek2.jpg", "caption": "Caption 2" }
+              ]
         },
         {
             "id":2,

@@ -12,8 +12,12 @@ export default function Info({ number, title }) {
         alignItems: "center",
       }}
     >
-      <Box component="span">{number}</Box>
-      <Box component="span">{title}</Box>
+      <Box component="span" sx={{ fontSize: "16px", fontWeight: "600" }}>
+        {number}
+      </Box>
+      <Box component="span" sx={{ fontSize: "16px", fontWeight: "400" }}>
+        {title}
+      </Box>
     </Grid>
   );
 }
