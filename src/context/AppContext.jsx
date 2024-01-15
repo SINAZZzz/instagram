@@ -7,8 +7,6 @@ export const AppContext = createContext();
 
 const AppContextProvider = ({ children }) => {
   const [user, setUser] = useState([]);
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
 
   const getData = () => {
     axios
@@ -26,10 +24,6 @@ const AppContextProvider = ({ children }) => {
       value={{
         user: user,
         setUser,
-        username: username,
-        setUsername,
-        password: password,
-        setPassword,
       }}
     >
       {children}

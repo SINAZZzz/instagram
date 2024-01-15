@@ -1,29 +1,46 @@
+// mui
 import { Box, Container, TextField, Typography  } from "@mui/material";
+// img
 import Logo from '../../assets/Instagram Logo.jpg'
 import faceBook from '../../assets/icons/Icon.svg'
+// react router
 import { Link, useNavigate } from "react-router-dom";
+// icons 
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+// context
 import {AppContext} from '../../context/AppContext.jsx'
-import { useContext } from "react";
+// react
+import React, { useContext, useState } from "react";
+// toast 
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function SwitchAccounts() {
-  const { user , username , password , setUsername , setPassword } =useContext(AppContext);
+
+interface User {
+  username: string;
+  password: string;
+}
+
+const SwitchAccounts: React.FC=()=> {
+  const { user  } =useContext(AppContext);
   const navigate = useNavigate();
+  const [credentials, setCredentials] = useState<User>({ username: '', password: '' });
 
-  const userName = localStorage.getItem('username')
-  const passWord = localStorage.getItem('password')
-  
-  localStorage.setItem('username',username);
-  localStorage.setItem('password',password);
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCredentials({
+      ...credentials,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-  const hanleSubmit = () => {
-    if(user.username == userName && user.password == passWord){
+
+  const handleLogin = () => {
+    if (credentials.username === user.username && credentials.password === user.password) {
       navigate("/home");
-    }else{
-      // toast()
-      toast.error('username or password that false', {
+      localStorage.setItem('username',credentials.username);
+      localStorage.setItem('password',credentials.password);
+    } else {
+      toast.error('Invalid login credentials.', {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -34,7 +51,8 @@ export default function SwitchAccounts() {
         theme: "light",
         });
     }
-  }
+  };
+
   
   return ( 
     <Container>
@@ -52,9 +70,11 @@ export default function SwitchAccounts() {
             <img src={Logo} alt="" />
           </Box>
           <Box sx={{mt:'3rem'}}>
-              <TextField fullWidth size="small" label='Username' type="text" required onChange={(e) => setUsername(e.target.value)}
+              <TextField fullWidth size="small" label='Username' type="text" required 
+              onChange={handleInputChange}  name="username"
               sx={{label:{fontSize:'14px' , color:'#A7A7A7'} , background:'#F8F6F6' }}/>
-              <TextField fullWidth size="small" label='Password' type="password" required onChange={(e) => setPassword(e.target.value)}
+              <TextField fullWidth size="small" label='Password' type="password" required
+               onChange={handleInputChange}   name="password"
               sx={{label:{fontSize:'14px' , color:'#A7A7A7'} , background:'#F8F6F6' , mt:'0.9rem'}}/>
           </Box>
           <Box sx={{
@@ -66,7 +86,7 @@ export default function SwitchAccounts() {
              <Typography variant="body1" color="#3797EF" fontSize="12px" fontWeight='500'>Forgot password?</Typography>
           </Box>
           <Box sx={{textAlign:'center' ,  mb:'4rem'}} width='100%'>
-            <Typography variant="h2" onClick={hanleSubmit}
+            <Typography variant="h2"  onClick={handleLogin}
             sx={{
               py:'15px',
               borderRadius:'5px',
@@ -143,3 +163,5 @@ export default function SwitchAccounts() {
       </Container>
   )
 }
+
+export default SwitchAccounts;
