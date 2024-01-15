@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Container } from "@mui/material";
+import { Box, Grid, Container, Badge } from "@mui/material";
 //
 import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
 import LiveTvOutlinedIcon from "@mui/icons-material/LiveTvOutlined";
@@ -31,7 +31,9 @@ export default function Head() {
             />
           </Grid>
           <Grid item xs={2}>
-            <LiveTvOutlinedIcon fontSize="large" />
+            <Badge color="error" variant="dot">
+              <LiveTvOutlinedIcon fontSize="large" />
+            </Badge>
           </Grid>
           <Grid item xs={1}>
             <SendOutlinedIcon fontSize="large" sx={{ rotate: "-40deg" }} />

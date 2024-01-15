@@ -6,18 +6,26 @@
             "age":18,
             "username":"sinaZz",
             "password":"sina2004",
+
             "img":"https://s6.uupload.ir/files/user_0ek2.jpg",
             "name":"sina zinsaz", 
-            
             "followers":"1M",
             "following":100,
             "desProfile":"Front-End dev",
             "post":4,
+
             "posts": [
                 { "id": 1, "imageUrl": "https://s6.uupload.ir/files/user_0ek2.jpg", "caption": "Caption 1" },
                 { "id": 2, "imageUrl": "https://s6.uupload.ir/files/user_0ek2.jpg", "caption": "Caption 2" },
                 { "id": 3, "imageUrl": "https://s6.uupload.ir/files/user_0ek2.jpg", "caption": "Caption 2" },
                 { "id": 4, "imageUrl": "https://s6.uupload.ir/files/user_0ek2.jpg", "caption": "Caption 2" }
+              ],
+
+              "storie":[
+                {"username": "user1","image": "https://s6.uupload.ir/files/user_0ek2.jpg","title": "Your Story"},
+                {"username": "user1","image": "https://s6.uupload.ir/files/user_0ek2.jpg","title": "ali shafii"},
+                {"username": "user1","image": "https://s6.uupload.ir/files/user_0ek2.jpg","title": "reza rajbi"},
+                {"username": "user1","image": "https://s6.uupload.ir/files/user_0ek2.jpg","title": "mmd rajbi"}
               ]
         },
         {
@@ -25,21 +33,72 @@
             "title":"user2",
             "age":20,
             "username":"ali123",
-            "password":123123
+            "password":123123,
+
+            "img":"https://s6.uupload.ir/files/user_0ek2.jpg",
+            "name":"ali shafii", 
+            "followers":"1M",
+            "following":100,
+            "desProfile":"Front-End dev",
+            "post":2,
+
+            "posts": [
+                { "id": 1, "imageUrl": "https://s6.uupload.ir/files/user_0ek2.jpg", "caption": "Caption 1" },
+                { "id": 2, "imageUrl": "https://s6.uupload.ir/files/user_0ek2.jpg", "caption": "Caption 2" }
+              ],
+
+               
+              "storie":[
+                {"username": "user1","image": "https://s6.uupload.ir/files/user_0ek2.jpg","title": "Your Story"}
+              ]
         },
         {
             "id":3,
             "title":"user3",
             "age":25,
             "username":"reza",
-            "password":22448899
+            "password":22448899,
+
+            "img":"https://s6.uupload.ir/files/user_0ek2.jpg",
+            "name":"reza rajbi", 
+            "followers":"1M",
+            "following":100,
+            "desProfile":"Front-End dev",
+            "post":2,
+
+            "posts": [
+                { "id": 1, "imageUrl": "https://s6.uupload.ir/files/user_0ek2.jpg", "caption": "Caption 1" },
+                { "id": 2, "imageUrl": "https://s6.uupload.ir/files/user_0ek2.jpg", "caption": "Caption 2" }
+              ],
+
+               
+              "storie":[
+                {"username": "user1","image": "https://s6.uupload.ir/files/user_0ek2.jpg","title": "Your Story"}
+              ]
         },
         {
             "id":4,
             "title":"user4",
             "age":30,
             "username":"mmd",
-            "password":12345678
+            "password":12345678,
+
+            "img":"https://s6.uupload.ir/files/user_0ek2.jpg",
+            "name":"mmd rajbi", 
+            "followers":"1M",
+            "following":100,
+            "desProfile":"Front-End dev",
+            "post":2,
+
+            "posts": [
+                { "id": 1, "imageUrl": "https://s6.uupload.ir/files/user_0ek2.jpg", "caption": "Caption 1" },
+                { "id": 2, "imageUrl": "https://s6.uupload.ir/files/user_0ek2.jpg", "caption": "Caption 2" }
+              ],
+
+               
+              "storie":[
+                {"username": "user1","image": "https://s6.uupload.ir/files/user_0ek2.jpg","title": "Your Story"}
+              ]
         }
     ]
 }
