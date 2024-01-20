@@ -2,6 +2,8 @@
 # React + TypeScript + Vite + MUI + Lazy + CustomHooks
 # Creator Sina Zinsaz
 
+>> sadasd
+
 > 📫 LinkedIn address : https://www.linkedin.com/in/sina-zinsaz-a71061244/
 
 > GitHub address : https://github.com/SINAZZzz
@@ -14,5 +16,3 @@
 > https://www.instagram.com/
 
 
-# live viwe
-> https://instagram-ue6c.vercel.app/
