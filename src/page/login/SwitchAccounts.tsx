@@ -20,9 +20,8 @@ interface User {
   username: string;
   password: string;
 }
-
 const SwitchAccounts: React.FC=()=> {
-  const { user  } =useContext(AppContext);
+  const { user , setUsername } =useContext(AppContext);
   const navigate = useNavigate();
   const [credentials, setCredentials] = useState<User>({ username: '', password: '' });
 
@@ -33,13 +32,10 @@ const SwitchAccounts: React.FC=()=> {
     });
   };
 
+  
 
   const handleLogin = () => {
-    if (credentials.username === user.username && credentials.password === user.password) {
-      navigate("/home");
-      localStorage.setItem('username',credentials.username);
-      localStorage.setItem('password',credentials.password);
-    } else {
+    if (credentials.username === "" && credentials.password === "") {
       toast.error('Invalid login credentials.', {
         position: "top-center",
         autoClose: 5000,
@@ -50,6 +46,11 @@ const SwitchAccounts: React.FC=()=> {
         progress: undefined,
         theme: "light",
         });
+      
+    } else {
+      navigate("/home");
+      localStorage.setItem('username',credentials.username);
+      localStorage.setItem('password',credentials.password);
     }
   };
 

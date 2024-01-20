@@ -6,7 +6,7 @@ import {AppContext} from '../../context/AppContext.jsx'
 
 
 export default function Login() {
-  const { user } =useContext(AppContext);
+  const { user ,username } =useContext(AppContext);
   return (
     <Container>
       <Box sx={{
@@ -21,7 +21,7 @@ export default function Login() {
         <Box>
           <Box component='img' alt="Profile" src={user.img} sx={{width:'5rem' , borderRadius:'50%' , mt:'2rem'}} />
           <Box>
-            {user.username}
+            {username}
           </Box>
         </Box>
         <Box sx={{textAlign:'center'}} width='100%'>

@@ -1,22 +1,33 @@
-.linkFacebook{
-    color: #3797EF;
-    font-weight: 600;
-    font-size: 14px;
-    margin-left: 0.5rem;
-    text-decoration: none;
-}
-.linkSwitchAccounts{
-    color: #3797EF;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-}
-.linkHome{
-    text-decoration: none;
-    color: white;
+
+body {
+  padding: 0;
+  margin: 0;
 }
 
-body{
-    padding: 0;
-    margin: 0;
+.linkFacebook {
+  color: #3797ef;
+  font-weight: 600;
+  font-size: 14px;
+  margin-left: 0.5rem;
+  text-decoration: none;
+}
+.linkSwitchAccounts {
+  color: #3797ef;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.linkHome {
+  text-decoration: none;
+  color: white;
+}
+
+.spanStory {
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 50%;
+  border:solid 2px #D91A46;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

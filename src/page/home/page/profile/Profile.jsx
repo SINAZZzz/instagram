@@ -15,13 +15,13 @@ import PropertyComponent from "./component/PropertyComponent";
 import HeadProfile from "./component/HeadProfile";
 
 export default function Profile() {
-  const { user } = useContext(AppContext);
+  const { user, username } = useContext(AppContext);
   const post = user.posts;
 
   return (
     <Box component="div" sx={{ width: "100%" }}>
       <Container>
-        <HeadProfile username={user.username} />
+        <HeadProfile username={username} />
         <InfoComponent
           img={user.img}
           post={user.post}

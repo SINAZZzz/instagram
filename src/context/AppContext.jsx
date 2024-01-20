@@ -7,6 +7,7 @@ export const AppContext = createContext();
 
 const AppContextProvider = ({ children }) => {
   const [user, setUser] = useState([]);
+  const username = localStorage.getItem("username");
 
   const getData = () => {
     axios
@@ -24,6 +25,7 @@ const AppContextProvider = ({ children }) => {
       value={{
         user: user,
         setUser,
+        username,
       }}
     >
       {children}

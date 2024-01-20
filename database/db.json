@@ -15,10 +15,10 @@
             "post":4,
 
             "posts": [
-                { "id": 1, "imageUrl": "https://s6.uupload.ir/files/user_0ek2.jpg", "caption": "Caption 1" },
-                { "id": 2, "imageUrl": "https://s6.uupload.ir/files/user_0ek2.jpg", "caption": "Caption 2" },
-                { "id": 3, "imageUrl": "https://s6.uupload.ir/files/user_0ek2.jpg", "caption": "Caption 2" },
-                { "id": 4, "imageUrl": "https://s6.uupload.ir/files/user_0ek2.jpg", "caption": "Caption 2" }
+                { "id": 1, "imageUrl": "https://s6.uupload.ir/files/user_0ek2.jpg", "caption": "Caption 1" , "country":"Iran" },
+                { "id": 2, "imageUrl": "https://s6.uupload.ir/files/user_0ek2.jpg", "caption": "Caption 2" , "country":"Iran"},
+                { "id": 3, "imageUrl": "https://s6.uupload.ir/files/user_0ek2.jpg", "caption": "Caption 2" , "country":"Iran"},
+                { "id": 4, "imageUrl": "https://s6.uupload.ir/files/user_0ek2.jpg", "caption": "Caption 2" , "country":"Iran"}
               ],
 
               "storie":[
