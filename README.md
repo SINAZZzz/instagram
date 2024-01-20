@@ -1,8 +1,11 @@
 # Instagram 
 # React + TypeScript + Vite + MUI + Lazy + CustomHooks
-# Creator Sina Zinsaz
 
->> sadasd
+# run project
+>    npm run dev
+>    npm run json-server
+
+# Creator Sina Zinsaz
 
 > 📫 LinkedIn address : https://www.linkedin.com/in/sina-zinsaz-a71061244/
 
