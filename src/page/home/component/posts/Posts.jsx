@@ -4,6 +4,10 @@ import { Box, Grid, Container } from "@mui/material";
 import { AppContext } from "../../../../context/AppContext";
 // icon
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import ModeCommentOutlinedIcon from "@mui/icons-material/ModeCommentOutlined";
+import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
+import TurnedInNotOutlinedIcon from "@mui/icons-material/TurnedInNotOutlined";
 
 export default function Posts() {
   const { user, username } = useContext(AppContext);
@@ -65,6 +69,65 @@ export default function Posts() {
         width="100%"
         height="25rem"
       />
+      {/* more opstion post */}
+      <Container>
+        <Box component="div">
+          <Grid
+            py="10px"
+            container
+            spacing={1}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Grid item xs={1.5}>
+              <Box component="div" mr="1rem">
+                <FavoriteBorderIcon sx={{ fontSize: "30px" }} />
+              </Box>
+            </Grid>
+            <Grid item xs={1.5}>
+              <ModeCommentOutlinedIcon sx={{ pr: "10px", fontSize: "30px" }} />
+            </Grid>
+            <Grid item xs={8}>
+              <SendOutlinedIcon sx={{ fontSize: "30px" }} />
+            </Grid>
+            <Grid item xs={1}>
+              <TurnedInNotOutlinedIcon sx={{ fontSize: "30px" }} />
+            </Grid>
+          </Grid>
+        </Box>
+        {/* description */}
+        <Box component="div" display="flex">
+          <Box
+            component="img"
+            alt="Profile"
+            src={user.img}
+            sx={{ width: "1rem", borderRadius: "50%", mr: "5px" }}
+          />
+          <Box component="span">
+            Liked by{" "}
+            <Box component="span" fontSize="16px" fontWeight="600">
+              {post[0].userLike}
+            </Box>{" "}
+            and{" "}
+            <Box component="span" fontSize="16px" fontWeight="600">
+              {post[0].like}
+            </Box>{" "}
+            others
+          </Box>
+        </Box>
+        <Box component="div">
+          <Box component="p">
+            <Box component="span" fontWeight="600">
+              {username}
+            </Box>{" "}
+            lorem
+            {post[0].description}
+          </Box>
+        </Box>
+      </Container>
     </Box>
   );
 }
