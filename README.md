@@ -1,5 +1,11 @@
 # Instagram 
 # React + TypeScript + Vite + MUI + Lazy + CustomHooks
+
+# run project
+>    npm run dev
+
+>    npm run json-server
+
 # Creator Sina Zinsaz
 
 > 📫 LinkedIn address : https://www.linkedin.com/in/sina-zinsaz-a71061244/
@@ -14,5 +20,3 @@
 > https://www.instagram.com/
 
 
-# live viwe
-> https://instagram-ue6c.vercel.app/
