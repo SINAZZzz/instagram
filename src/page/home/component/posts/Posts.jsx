@@ -14,7 +14,7 @@ export default function Posts() {
   const post = user.posts;
 
   return (
-    <Box component="div" py="10px">
+    <Box component="div" py="10px" mb="40px">
       {/* head post */}
       <Container>
         <Grid
