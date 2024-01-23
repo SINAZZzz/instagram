@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import { useState } from "react";
 import { MuiFileInput } from "mui-file-input";
 import AttachFileIcon from '@mui/icons-material/AttachFile';
+import CameraComponent from "./components/Camera";
 
 export default function AddPost() {
   const [value, setValue] = useState<File | null>(null)
@@ -15,6 +16,7 @@ export default function AddPost() {
         <AttachFileIcon />
       </Box>
       <MuiFileInput value={value} onChange={handleChange} inputProps={{accept:'image/*'}}  placeholder="Select File" sx={{width:'100%'}} />
+      <CameraComponent />
     </Box>
   );
 }
