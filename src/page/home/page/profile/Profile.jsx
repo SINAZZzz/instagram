@@ -15,8 +15,8 @@ import PropertyComponent from "./component/PropertyComponent";
 import HeadProfile from "./component/HeadProfile";
 
 export default function Profile() {
-  const { user, username } = useContext(AppContext);
-  const post = user.posts;
+  const { user, username, post } = useContext(AppContext);
+  // const post = user.posts;
 
   return (
     <Box component="div" sx={{ width: "100%" }}>

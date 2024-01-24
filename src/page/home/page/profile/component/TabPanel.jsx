@@ -44,8 +44,8 @@ export default function TabPanelComponent({ posts }) {
                   }}
                 >
                   <CardMedia
-                    image={post.imageUrl}
-                    title={post.caption}
+                    image={post.File}
+                    title={post.Description}
                     sx={{ height: 0, paddingTop: "100%" }}
                   />
                 </Card>

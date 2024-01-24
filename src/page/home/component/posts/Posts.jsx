@@ -10,8 +10,8 @@ import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
 import TurnedInNotOutlinedIcon from "@mui/icons-material/TurnedInNotOutlined";
 
 export default function Posts() {
-  const { user, username } = useContext(AppContext);
-  const post = user.posts;
+  const { user, username, post } = useContext(AppContext);
+  // const post = user.posts;
 
   return (
     <Box component="div" py="10px" mb="40px">
@@ -53,7 +53,7 @@ export default function Posts() {
               />
             </Box>
             <Box fontWeight="400" fontSize="11px" ml="5px">
-              {post[0].country}
+              {post.country}
             </Box>
           </Grid>
           <Grid item xs={1}>
