@@ -16,10 +16,9 @@ import HeadProfile from "./component/HeadProfile";
 
 export default function Profile() {
   const { user, username, post } = useContext(AppContext);
-  // const post = user.posts;
 
   return (
-    <Box component="div" sx={{ width: "100%" }}>
+    <Box component="div" sx={{ width: "100%", pb: "65px" }}>
       <Container>
         <HeadProfile username={username} />
         <InfoComponent

@@ -11,14 +11,16 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 // router
 import { useNavigate } from "react-router-dom";
+import FileUpload from './components/FileUpload'
 
 interface Posts {
   File: File ;
   Description:string;
+  Country:string;
 }
 
 export default function AddPost() {
-  const [postData , setPostData] = useState<Posts>({File:'' , Description:''})
+  const [postData , setPostData] = useState<Posts>({File:'https://s6.uupload.ir/files/user_0ek2.jpg' , Description:'' , Country:'Iran'})
   const navigate = useNavigate();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,7 +30,7 @@ export default function AddPost() {
     });
   };
   const handleSubmit = () => {
-    if(postData.File === '' && postData.Description === ''){
+    if(postData.File === '' || postData.Description === ''){
       toast.error('faild add post', {
         position: "top-center",
         autoClose: 5000,
@@ -39,7 +41,6 @@ export default function AddPost() {
         progress: undefined,
         theme: "light",
         });
-      setPostData('')
     }else{
       axios.post(`http://localhost:5015/posts` , postData)
       .then(res => {
@@ -57,7 +58,6 @@ export default function AddPost() {
       })
     }
   }
-  
 
 
   return (
@@ -65,8 +65,11 @@ export default function AddPost() {
       <ToastContainer />
       <Container>
         <InputLabel >Select File</InputLabel >
-        <Input type="file" value={postData.imageUrl} onChange={handleInputChange} 
-         name="File" placeholder="" sx={{width:'100%'}} inputProps={{accept:'image/*'}}  />
+        {/* value={postData.File}  */}
+        <Input type="file" onChange={handleInputChange} 
+         sx={{width:'100%'}}  inputProps={{accept:'image/*'}}
+           />
+         {/* <FileUpload onFileChange={handleInputChange} name='File' /> */}
         <CameraComponent />
 
         <TextField

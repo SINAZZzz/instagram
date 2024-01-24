@@ -61,3 +61,16 @@ body {
     transform: rotate(360deg);
   }
 }
+
+/* uploader */
+
+.from{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+}
