@@ -11,16 +11,28 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 // router
 import { useNavigate } from "react-router-dom";
-import FileUpload from './components/FileUpload'
+// import FileUpload from './components/FileUpload'
 
 interface Posts {
+  id:number;
   File: File ;
   Description:string;
-  Country:string;
+  Country:string; 
+  like:number;
+  userLike:number;
+  profileImg:string;
 }
 
 export default function AddPost() {
-  const [postData , setPostData] = useState<Posts>({File:'https://s6.uupload.ir/files/user_0ek2.jpg' , Description:'' , Country:'Iran'})
+  const [postData , setPostData] = useState<Posts>({
+      id:Math.floor(Math.random() * 100),
+      File:'https://s6.uupload.ir/files/user_0ek2.jpg' ,
+      Description:'' ,
+      Country:'Iran',
+      like:Math.floor(Math.random() * 100),
+      userLike:"SINA",
+      profileImg:'https://s6.uupload.ir/files/user_0ek2.jpg'
+    })
   const navigate = useNavigate();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,6 +40,7 @@ export default function AddPost() {
       ...postData,
       [e.target.name]: e.target.value,
     });
+
   };
   const handleSubmit = () => {
     if(postData.File === '' || postData.Description === ''){
@@ -55,6 +68,7 @@ export default function AddPost() {
           theme: "light",
           });
           navigate("/home");
+          window.location.reload()
       })
     }
   }

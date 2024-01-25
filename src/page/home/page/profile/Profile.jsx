@@ -7,12 +7,12 @@ import { AppContext } from "../../../../context/AppContext";
 import BtnNavigation from "../../component/btnNavigation/btnNavigation";
 
 // img
-import TabPanelComponent from "./component/TabPanel";
-import StoryComponent from "./component/StoryComponent";
-import BtnEdit from "./component/BtnEdit";
-import InfoComponent from "./component/InfoComponent";
-import PropertyComponent from "./component/PropertyComponent";
-import HeadProfile from "./component/HeadProfile";
+import TabPanelComponent from "./components/TabPanel";
+import StoryComponent from "./components/StoryComponent";
+import BtnEdit from "./components/BtnEdit";
+import InfoComponent from "./components/InfoComponent";
+import PropertyComponent from "./components/PropertyComponent";
+import HeadProfile from "./components/HeadProfile";
 
 export default function Profile() {
   const { user, username, post } = useContext(AppContext);

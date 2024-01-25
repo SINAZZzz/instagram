@@ -1,10 +1,18 @@
 import { Box, Grid } from "@mui/material";
-// icons
+
 import MenuIcon from "@mui/icons-material/Menu";
+// icons
 import LockIcon from "@mui/icons-material/Lock";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Sidebar from "./Sidebar";
+import { useState } from "react";
 
 export default function HeadProfile({ username }) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
   return (
     <Grid container spacing={1}>
       <Grid item xs={11}>
@@ -16,7 +24,7 @@ export default function HeadProfile({ username }) {
             alignItems: "center",
           }}
         >
-          <LockIcon fontSize="samll" />
+          <LockIcon fontSize="small" />
           {username}
           <ExpandMoreIcon />
         </Box>
@@ -30,7 +38,8 @@ export default function HeadProfile({ username }) {
           alignItems: "center",
         }}
       >
-        <MenuIcon fontSize="large" />
+        <MenuIcon onClick={toggleSidebar} />
+        <Sidebar isOpen={sidebarOpen} toggleDrawer={toggleSidebar} />
       </Grid>
     </Grid>
   );
