@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
-// Hook
 
 interface WindowSize {
   width: number | undefined;
   height: number | undefined;
 }
 
-function useWindowSize() {
+function useWindowSize(): WindowSize {
   const [windowSize, setWindowSize] = useState<WindowSize>({
     width: undefined,
     height: undefined,
   });
+
   useEffect(() => {
     function handleResize() {
       setWindowSize({
@@ -20,9 +20,11 @@ function useWindowSize() {
     }
     window.addEventListener("resize", handleResize);
     handleResize();
+
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [setWindowSize]);
+
   return windowSize;
 }
-7;
+
 export default useWindowSize;

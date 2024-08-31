@@ -24,7 +24,6 @@ const AppContextProvider = ({ children }) => {
       .catch((error) => console.log("error", error));
   };
 
-  console.log(post);
   useEffect(() => {
     getDataUser();
     getDataPost();
